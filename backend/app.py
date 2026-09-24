@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 import pandas as pd
 import numpy as np
@@ -8,7 +9,7 @@ from zoneinfo import ZoneInfo
 
 
 app = Flask(__name__)
-
+CORS(app)
 # Cargar los datos una sola vez cuando inicia el servidor
 
 ARCHIVO_DATOS = "Datos_SIATA_Aire_pm25_corregido.json"
